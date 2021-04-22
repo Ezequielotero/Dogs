@@ -1,0 +1,24 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+.nav{
+    height: 10vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr  1fr 1fr ;
+    grid-template-rows: 1fr  ;
+    background-color: gray
+}
+.home{
+    grid-column: 0;
+    align-self: center;
+    font-size: 2rem;
+    justify-self: start;
+    padding-left: 40px;
+}
+.hola{
+    grid-column: 5;
+    align-self: center;
+    padding-right: 40px;
+}

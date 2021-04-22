@@ -1,0 +1,24 @@
+.div{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
+    width: 100vw;
+}
+.input{
+    grid-column: 4;
+    /* margin-right: 20px;
+    height: 25px;
+    border-radius: 10px;
+    -webkit-box-shadow: 11px 11px 6px -3px rgba(66,66,66,1);
+-moz-box-shadow: 11px 11px 6px -3px rgba(66,66,66,1);
+box-shadow: 11px 11px 6px -3px rgba(66,66,66,1);
+border: none; */
+}
+.boton{
+    grid-column: 4;
+    /* height: 27px;
+    border-radius: 10px;
+    border: none;
+    -webkit-box-shadow: 11px 11px 6px -3px rgba(66,66,66,1);
+-moz-box-shadow: 11px 11px 6px -3px rgba(66,66,66,1);
+box-shadow: 11px 11px 6px -3px rgba(66,66,66,1); */
+}  

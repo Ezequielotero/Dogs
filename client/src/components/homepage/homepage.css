@@ -1,0 +1,44 @@
+
+.bg{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-rows: 1fr 1fr 1fr;
+    width: 100vw;
+    height:90vh;
+    background-image: url('C:\Users\Ezequiel\Desktop\pi\PI-Dogs\client\src\components\homepage\kisspng-dog-cat-portable-network-graphics-paw-clip-art-patinhas-de-cachorro-png-footprint-cat-clipart-5d2b72e6842987.7682277015631285505413.png');
+    background-color: black;
+}
+.img{
+justify-self: stretch;
+align-self: stretch;
+grid-column: 1/3;
+grid-row: 1/4;
+-webkit-box-shadow: 9px 0px 10px -2px rgba(0,0,0,0.75);
+-moz-box-shadow: 9px 0px 10px -2px rgba(0,0,0,0.75);
+box-shadow: 9px 0px 10px -2px rgba(0,0,0,0.75);
+}
+
+
+.text{
+    align-self: end;
+    padding-bottom: 15px;
+    color: black;
+    background-color: white;
+    height: 100px;
+    padding-top: 25px;
+}
+
+
+ .button{
+    width: 200px;
+    height: 50px;
+    border-radius: 8px;
+    font-size: 1.8rem;
+    color: black;
+    border: none;
+} 
+.divbu{
+    padding-top: 20px;
+    grid-row: 2;
+    background-color: white;
+}

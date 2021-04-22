@@ -3,13 +3,64 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const routes = require('./routes/index.js');
-
 require('./db.js');
+const { v4: uuidv4 } = require('uuid')
+const axios = require('axios').default;
+const {Temperament}=require('./db')
+
+
 
 const server = express();
 
-server.name = 'API';
+// const sendGetRequest = async () => {
+//     try {
+//         const resp = await axios.get('https://api.thedogapi.com/v1/breeds');
+//         for (let i = 0; i < resp.data.length; i++) {
+//           Dog.create({
+//             id:uuidv4(),
+//             name:resp.data[i].name,
+//             height:resp.data[i].height.metric,
+//             weight:resp.data[i].weight.metric,
+//             years:resp.data[i].life_span
+            
+//           })
+//           console.log('hola')
+//         }
+//         console.log('llene todo lo que querias')
+//     }catch (err) {
+//         console.error(err);
+//     }
 
+//   }
+  const sendGettemps = async () => {
+    try {
+      var total=[]
+        const resp = await axios.get('https://api.thedogapi.com/v1/breeds');
+        for (let i = 0; i < resp.data.length; i++) {
+            if(resp.data[i].temperament){
+              var split=resp.data[i].temperament.split(', '||',')
+              for (let j = 0; j < split.length; j++){
+                if(!total.includes(split[j])){
+                  total.push(split[j])
+                }
+              }
+            }
+          }
+          for (let i = 0; i < total.length; i++) {
+            Temperament.findOrCreate({
+              where:{
+                name:total[i]
+              }
+            })
+            
+          }
+    }catch (err) {
+        console.error(err);
+    }
+
+  }
+  sendGettemps()
+server.name = 'API';
 server.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));
 server.use(bodyParser.json({ limit: '50mb' }));
 server.use(cookieParser());
@@ -22,7 +73,10 @@ server.use((req, res, next) => {
   next();
 });
 
-server.use('/', routes);
+
+server.use('/',routes)
+
+
 
 // Error catching endware.
 server.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
