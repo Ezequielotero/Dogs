@@ -4,7 +4,7 @@ const dog = require('../models/Dog')
 const router = Router();
 const { v4: uuidv4 } = require('uuid');
 const {Dog, Temperament}=require('../db')
-const { Op } = require('sequelize');
+
 
 var detalles=[]
 
@@ -97,22 +97,4 @@ router.get('/', async(req,res)=>{
     }
 }
 })
-router.post('/', async(req,res)=>{
-    const {name,weight,height,years,Temperaments}=req.body
-    console.log(req)
-        let dog = await Dog.create({
-            id:uuidv4(),
-            name,
-            weight,
-            height,
-            years,
-        })
-        Temperaments.forEach(async temp => {
-           const tempera = await Temperament.findOne({
-                where: { name: { [Op.iLike]: `%${temp}%` } }
-            })
-            dog.addTemperament(tempera)
-        })
-        res.send("succes")
-  })
 module.exports = router;
