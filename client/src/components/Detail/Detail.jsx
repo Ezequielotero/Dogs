@@ -1,19 +1,22 @@
 import React from 'react'; 
- import './detail.css'
 import { connect } from "react-redux";
 
 function Detail(props){
 
     return(
-        <div className='detail'>
-            <div className='column'>
-            <h1 className='h1'>{props.detalle[0]?.name}</h1>
-            <h2 className='temper'>{props.detalle[0]?.temperament}</h2>
-            <h2>{props.detalle[0]?.weight}</h2>
-            <h2>{props.detalle[0]?.height}</h2>
-            <h2>{props.detalle[0]?.years}</h2>
+        <div >
+                <div className='flex'>
+            <div className='mt-10 mr-20 rounded-2xl ml-20  h-60 shadow-lg '>
+                <div className='pt-5'>
+            <h1 className='font-extrabold text-2xl'>Name🐕: {props.detalle[0]?.name}</h1>
+            <h2 className='font-extrabold text-2xl'>Temperament😊: {props.detalle[0]?.temperament}</h2>
+            <h2 className='font-extrabold text-2xl'>Weight⚖️: {props.detalle[0]?.weight}</h2>
+            <h2 className='font-extrabold text-2xl'>Height📊: {props.detalle[0]?.height}</h2>
+            <h2 className='font-extrabold text-2xl'>Life span❤️: {props.detalle[0]?.years}</h2>
             </div>
-            <img src={props.detalle[0]?.img} alt=""/>
+            </div>
+            <img className=' h-96 mt-10 w-2/3 mr-10 rounded-2xl shadow-lg' src={props.detalle[0]?.img} alt=""/>
+        </div>
         </div>
     )
     }

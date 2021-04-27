@@ -2,5 +2,11 @@
   "dependencies": {
     "express": "^4.17.1",
     "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.2.5",
+    "postcss": "^8.2.12",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^2.1.2"
   }
 }

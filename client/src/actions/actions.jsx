@@ -34,6 +34,7 @@ export function getDogs(name) {
 export function getDogsDetail(id) {
   return async function (dispatch) {
     var resp2= await axios.get(`http://localhost:3001/dogs/${id}`)
+    console.log(resp2.data)
         {
         dispatch({ type: 'GET_DOGS_DETAIL', payload: resp2.data.map(dog => {
           return {

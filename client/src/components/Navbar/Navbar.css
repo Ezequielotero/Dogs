@@ -3,7 +3,7 @@
     padding: 0;
     margin: 0;
   }
-.nav{
+/* .nav{
     height: 10vh;
     display: grid;
     grid-template-columns: 1fr 1fr  1fr 1fr ;
@@ -21,4 +21,4 @@
     grid-column: 5;
     align-self: center;
     padding-right: 40px;
-}
+} */
