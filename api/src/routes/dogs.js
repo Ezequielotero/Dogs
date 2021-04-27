@@ -7,7 +7,7 @@ const {Dog, Temperament}=require('../db')
 const { Op } = require('sequelize');
 
 var detalles=[]
-try{
+
 router.get(`/:idRaza`, async(req,res)=>{
     let resp= await axios.get('https://api.thedogapi.com/v1/breeds')
     for (let i = 0; i < resp.data.length; i++) {
@@ -25,9 +25,7 @@ router.get(`/:idRaza`, async(req,res)=>{
     res.json(detalles)
     detalles=[]
 })
-}catch{
-    res.send('err')
-}
+
 
 // async function bdd() {
 
@@ -65,7 +63,7 @@ router.get(`/:idRaza`, async(req,res)=>{
 
 let perro=[]
 let perro2=[]
-try{
+
 router.get('/', async(req,res)=>{
     if (!req.query.name) {
         perro=[]
@@ -98,9 +96,7 @@ router.get('/', async(req,res)=>{
         res.json(perro)
     }
 }
-})}catch{
-    res.send('err')
-}
+})
 router.post('/', async(req,res)=>{
     const {name,weight,height,years,Temperaments}=req.body
     console.log(req)
