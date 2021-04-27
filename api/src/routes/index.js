@@ -1,5 +1,4 @@
 const { Router } = require('express');
-
 var dog = require('./dogs.js')
 var temperament= require('./temperament.js')
 

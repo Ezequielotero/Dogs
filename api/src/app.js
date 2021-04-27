@@ -3,10 +3,9 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const routes = require('./routes/index.js');
-require('./db.js');
 const { v4: uuidv4 } = require('uuid')
 const axios = require('axios').default;
-const {Temperament}=require('./db')
+
 
 
 
@@ -45,14 +44,7 @@ const server = express();
                 }
               }
             }
-          }
-          for (let i = 0; i < total.length; i++) {
-            Temperament.findOrCreate({
-              where:{
-                name:total[i]
-              }
-            })
-            
+                      
           }
     }catch (err) {
         console.error(err);

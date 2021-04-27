@@ -1,7 +1,7 @@
 const { default: axios } = require('axios');
 const { Router } = require('express');
 const router = Router();
-const {Temperament}=require('../db')
+
 
 var array=[]
 
