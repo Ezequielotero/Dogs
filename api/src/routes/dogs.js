@@ -1,9 +1,7 @@
 const { default: axios } = require('axios');
 const { Router } = require('express');
-const dog = require('../models/Dog')
 const router = Router();
-const { v4: uuidv4 } = require('uuid');
-const {Dog, Temperament}=require('../db')
+
 
 
 var detalles=[]
