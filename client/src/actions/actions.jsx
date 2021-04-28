@@ -5,7 +5,7 @@ export const GET_DOGS_TEMPERAMENTS = 'GET_DOGS_TEMPERAMENTS'
 export function getDogs(name) {
   return async (dispatch) => {
       if (!name) {
-        var respall = await axios.get('http://165.227.85.178:3001/dogs')
+        var respall = await axios.get('http://localhost:3001/dogs')
         dispatch({
           type: GET_DOGS, payload: respall.data.map(dog => {
               return {
